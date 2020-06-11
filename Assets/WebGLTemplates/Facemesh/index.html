@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  
+  <!-- Load three.js -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.106.2/build/three.min.js"></script>
+  <!-- Load scatter-gl.js -->
+  <script src="https://cdn.jsdelivr.net/npm/scatter-gl@0.0.1/lib/scatter-gl.min.js"></script>
+  <script type="module" src="https://cdn.jsdelivr.net/gh/tensorflow/tfjs-models/facemesh/demo/triangulation.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.6/dat.gui.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/facemesh"></script>
+  <script id="execute" src="execute.js"></script>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Unity WebGL Player | Facemesh</title>
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <link rel="stylesheet" href="TemplateData/style.css">
+
+    <script src="TemplateData/UnityProgress.js"></script>
+    <script src="Build/UnityLoader.js"></script>
+    <script>
+      var unityInstance = UnityLoader.instantiate("unityContainer", "Build/Build.json", {onProgress: UnityProgress});
+    </script>
+    <style>
+      .canvas-wrapper, #scatter-gl-container {
+        display: inline-block;
+        vertical-align: top;
+      }
+
+      #scatter-gl-container {
+        border: solid 1px black;
+        position: relative;
+      }
+
+      /* center the canvas within its wrapper */
+      #scatter-gl-container canvas {
+        transform: translate3d(-50%, -50%, 0);
+        left: 50%;
+        top: 50%;
+        position: absolute;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="webgl-content">
+      <div class="canvas-wrapper">
+        <canvas id="output"></canvas>
+        <video id="video" playsinline style="
+          -webkit-transform: scaleX(-1);
+          transform: scaleX(-1);
+          visibility: hidden;
+          width: auto;
+          height: auto;
+          ">
+        </video>
+      </div>
+      <div id="unityContainer" style="width: 960px; height: 600px"></div>
+      <div class="footer">
+        <div class="webgl-logo"></div>
+        <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
+        <div class="title">Facemesh</div>
+      </div>
+    </div>
+  </body>
+</html>
