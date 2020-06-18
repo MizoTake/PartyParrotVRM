@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/facemesh"></script>
+
+  <!-- https://github.com/spite/ccapture.js -->
+  <script src="https://cdn.jsdelivr.net/npm/ccapture.js/build/CCapture.all.min.js"></script>
+
+  <script id="execute" src="execute.js"></script>
+  <script src="dragAndDrop.js"></script>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Unity WebGL Player | Facemesh</title>
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <link rel="stylesheet" href="TemplateData/style.css">
+
+    <script src="TemplateData/UnityProgress.js"></script>
+    <script src="Build/UnityLoader.js"></script>
+    <script>
+      var unityInstance = UnityLoader.instantiate("unityContainer", "Build/Build.json", {onProgress: UnityProgress});
+    </script>
+    <style>
+      .canvas-wrapper, #scatter-gl-container {
+        left: 69%;
+        top: 3%;
+        position: absolute;
+        width: 30%;
+        height: 30%;
+      }
+
+      #scatter-gl-container {
+        border: solid 1px black;
+        position: relative;
+      }
+
+      /* center the canvas within its wrapper */
+      #scatter-gl-container canvas {
+        transform: translate3d(-50%, -50%, 0);
+        left: 50%;
+        top: 50%;
+        position: absolute;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="screen" class="webgl-content">
+      <div id="unityContainer" width="100%" height="100%"></div>
+      <div id="canvas-wrapper" class="canvas-wrapper">
+        <canvas id="output"></canvas>
+        <video id="video" playsinline style="
+            -webkit-transform: scaleX(-1);
+            transform: scaleX(-1);
+            visibility: hidden;
+            width: auto;
+            height: auto;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+          ">
+        </video>
+      </div>
+    </div>
+  </body>
+</html>

@@ -35,4 +35,9 @@ sysinfo.txt
 *.apk
 *.unitypackage
 
-
+# Assets
+VRM/
+UnityChan/
+TextMesh Pro/
+sample/
+henoheno/
