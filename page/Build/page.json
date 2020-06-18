@@ -1,0 +1,16 @@
+{
+"companyName": "MizoTake",
+"productName": "PartyParrotVRM",
+"productVersion": "0.1",
+"dataUrl": "page.data.unityweb",
+"wasmCodeUrl": "page.wasm.code.unityweb",
+"wasmFrameworkUrl": "page.wasm.framework.unityweb",
+"graphicsAPI": ["WebGL 2.0","WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"splashScreenStyle": "Dark",
+"backgroundColor": "#231F20",
+"cacheControl": {"default": "must-revalidate"},
+"developmentBuild": false,
+"multithreading": false,
+"unityVersion": "2019.3.13f1"
+}

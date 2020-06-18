@@ -59,6 +59,9 @@ namespace PartyParrotVRM.Controller
         {
             shapeProxy = avatar.GetComponent<VRMBlendShapeProxy>();
             head = avatar.GetComponent<VRMFirstPerson>().FirstPersonBone;
+            var blendAnimation = avatar.gameObject.AddComponent<BlendAnimation>();
+            var animator = avatar.gameObject.GetComponent<Animator>();
+            blendAnimation.Injection(animator, lookAtTarget);
             SettingsPartyMaterial();
         }
 

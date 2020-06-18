@@ -24,14 +24,14 @@ namespace PartyParrotVRM.Provider
 #if UNITY_EDITOR
         private void Start()
         {
-            using (var reader = new FileStream($"{Define.MOCK_JSON_DIRECTORY}/sample.vrm", FileMode.Open))
-            {
-                var data = new byte[reader.Length];
-                reader.Read(data, 0, data.Length);
-                byteContent.AddRange(data);
-                UpdateVrm();
-                reader.Close();
-            }
+            // using (var reader = new FileStream($"{Define.MOCK_JSON_DIRECTORY}/sample/sample.vrm", FileMode.Open))
+            // {
+            //     var data = new byte[reader.Length];
+            //     reader.Read(data, 0, data.Length);
+            //     byteContent.AddRange(data);
+            //     UpdateVrm();
+            //     reader.Close();
+            // }
         }
 #endif
 
